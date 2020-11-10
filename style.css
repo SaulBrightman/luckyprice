@@ -13,19 +13,18 @@ body{
     height: 50px;
     float: right;
 }
+.button{
+    z-index: 100;
+}
+.input{
+    z-index: 100;
+}
 .banner-text ul li{
     display: inline-block;
     padding: 40px 15px;
     text-transform: uppercase;
     color: black;
     font-size: 20px;
-}
-.rcorners{
-    border-radius: 50%;
-    background: transparent;
-    padding: 20px;
-    width: 200px;
-    height: 150px;   
 }
 .banner-text h2{
     text-align: center;
