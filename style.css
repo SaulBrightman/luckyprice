@@ -93,6 +93,9 @@ body{
     height: 110px;
     animation-delay: 3.5s;
 }
+#display{
+    justify-content: center;
+}
 @keyframes animate{
     0%{
         transform: translateY(0) rotate(0deg);
