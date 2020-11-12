@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="style.css">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Game Search</title>
   </head>
   <body>
-    <div class="banner-text">
+      <div class="banner-text column is-mobile">
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li><input class="input is-rounded is-primary" id="game-text" type="text" placeholder="Game Search"></li>
-        <li><button class="button is-primary is-focused" id="search">Search</button></li>
-        <li><button class="button is-primary is-focused" id="list">List by Title</button></li>
+        <li id="display"></li>
+        <li id="price"></li>
+        <li id="image"></li>
+        <li><input class="input is-rounded is-primary is-mobile" id="game-text" type="text" placeholder="Game Search"></li>
+        <li><button class="button is-primary is-focused is-mobile" id="search">Search</button></li>
+        <li><button class="button is-primary is-focused is-mobile" id="list">Deals</button></li>
       </ul>
-      <h2></h2>
+      </div>
     </div>
     <div class="animation-area">
       <ul class="box-area">
@@ -30,7 +30,9 @@
         <li></li>
       </ul>
     </div>
-    <script src = "javascript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src= "javascript.js"></script>
   </body>
 </html>
   
