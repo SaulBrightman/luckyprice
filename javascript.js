@@ -23,7 +23,7 @@ today = (user) => {
         $("#display").empty();
 
         var normalPrice = data[1].normalPrice;
-        let oldP =$('<p>').text("retail:" + normalPrice);
+        let oldP =$('<p>').text("Retail:" + normalPrice);
         $("#retail").append(oldP);
         let gameTitle = data[1].title;
         let pOne = $('<p>').text("Title : " + gameTitle);
