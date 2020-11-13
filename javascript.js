@@ -21,6 +21,10 @@ today = (user) => {
     }).then(function(data) {
         console.log(data);
         $("#display").empty();
+
+        var normalPrice = data[1].normalPrice;
+        let oldP =$('<p>').text("retail:" + normalPrice);
+        $("#retail").append(oldP);
         let gameTitle = data[1].title;
         let pOne = $('<p>').text("Title : " + gameTitle);
         $("#display").append(pOne);
@@ -32,7 +36,20 @@ today = (user) => {
         let gameImage = data[1].thumb;
         let pThree = $('<img>').attr('src', gameImage);
         $('#image').append(pThree);
+        
+                var gameObject= {
+                    gameTitle: data[1].title,
+                    gamePrice: data[1].salePrice,
+                    gameImage: data[1].thumb
+                }
+            
+            
+                 localStorage.setItem("storageTi2", JSON.stringify(gameObject ));
+                 let storageTi= localStorage.getItem("storageTi2");
+                console.log (JSON.parse(storageTi)); 
     });
+
+
 
 
 };
