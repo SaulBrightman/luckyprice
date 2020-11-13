@@ -21,6 +21,7 @@ today = (user) => {
     }).then(function(data) {
         console.log(data);
         $("#display").empty();
+        $("#retail").empty();
 
         var normalPrice = data[1].normalPrice;
         let oldP =$('<p>').text("Retail:" + normalPrice);
