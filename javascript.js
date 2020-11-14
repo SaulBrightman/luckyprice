@@ -74,7 +74,7 @@ today = (user) => {
         $("#display").append(pOne);
         $("#price").empty();
         let gamePrice = data[1].salePrice;
-        let pTwo = $('<p>').text("On-sale Now! " + gamePrice);
+        let pTwo = $('<p>').text("Your Lucky Price! " + gamePrice);
         $("#price").append(pTwo);
         $("#image").empty();
         let gameImage = data[1].thumb;
