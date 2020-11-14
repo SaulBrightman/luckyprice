@@ -8,7 +8,7 @@ $(document).ready(function() {
     renderGames = () => {
         let searchedGames = JSON.parse(localStorage.getItem('gameName'));
         let gameBtn = $("<button class= 'button is-primary is-focused is-mobile'>").text(searchedGames);
-        $('#searches').append(gameBtn);
+        $('#searches').prepend(gameBtn);
     }
 //event listener for search button
     $('#search').click(function(){
