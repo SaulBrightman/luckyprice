@@ -1,7 +1,7 @@
 $(document).ready(function() {
 // displays current time
-    moment().format("ll")
-    let currentDate= moment().format("ll");
+    moment().format("LLL")
+    let currentDate= moment().format("LLL");
     console.log(currentDate) 
     $("#DT").text(currentDate);
 //renders buttons for previously searched games
@@ -84,6 +84,12 @@ today = (user) => {
         metaData = () => {
             let metaLink = data[1].metacriticLink;
             $('#meta-link').attr("href", "https://www.metacritic.com/" + metaLink);
+        }
+
+        steamData = () => {
+            let steamLink = data[1].steamAppID;
+            console.log(steamLink)
+            $('#steam-link').attr("href", "https://store.steampowered.com/app/" + steamLink);
         }
         
         /*var gameObject= {
