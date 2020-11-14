@@ -39,6 +39,7 @@ today = (user) => {
         $('#image').append(pThree);
         
                 var gameObject= {
+                    normalPrice: data[1].normalPrice,
                     gameTitle: data[1].title,
                     gamePrice: data[1].salePrice,
                     gameImage: data[1].thumb
