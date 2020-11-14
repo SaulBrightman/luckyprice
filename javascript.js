@@ -4,12 +4,22 @@ $(document).ready(function() {
     let currentDate= moment().format("ll");
     console.log(currentDate) 
     $("#DT").text(currentDate);
+
+    renderGames = () => {
+        let searchedGames = JSON.stringify(localStorage.getItem('gameName'));
+        let gameBtn = $("<button class= 'button is-primary is-focused is-mobile'>").text(searchedGames);
+        $('#searches').append(gameBtn);
+    }
     $('#search').click(function(){
     $("#game-text").val() == "";
     //get the text value
-    var user = $("#game-text").val().trim();  
+    var user = $("#game-text").val().trim(); 
+    var userContent = $(this).siblings("input").val();
+    var gameArr = [];
+    gameArr.push(userContent);
+    localStorage.setItem('gameName', JSON.stringify(gameArr));
     today(user);
-    
+    renderGames();
 });
 $('#store-list').click(function(){
     $.ajax({
@@ -33,9 +43,16 @@ today = (user) => {
         $("#rating-text").empty();
         $("#rating-count").empty();
         let ratingPercent = data[1].steamRatingPercent;
+
+        if (ratingPercent <= 40) {
+            var ratingIcon = $("<i class='fas fa-thumbs-down'>")
+        } else if (ratingPercent >= 41) {
+            var ratingIcon = $("<i class='fas fa-thumbs-up'>")
+        }
         let ratingText = data[1].steamRatingText;
         let percentDiv = $('<p>').text( ratingPercent + " % " + ratingText + " - STEAM");
         $("#rating-text").append(percentDiv);
+        $("#rating-text").append(ratingIcon);
         let ratingCount = data[1].steamRatingCount;
         let countDiv = $('<p>').text("Rated By : " + ratingCount + " Gamers");
         $('#rating-count').append(countDiv);
@@ -54,7 +71,7 @@ today = (user) => {
         let gameImage = data[1].thumb;
         let pThree = $('<img>').attr('src', gameImage);
         $('#image').append(pThree);
-        
+
         metaData = () => {
             let metaLink = data[1].metacriticLink;
             $('#meta-link').attr("href", "https://www.metacritic.com/" + metaLink);
