@@ -8,6 +8,7 @@ body{
 }
 .cut{
     text-decoration: line-through;
+    color: red;
 }
 .card{
     background-color: transparent;
