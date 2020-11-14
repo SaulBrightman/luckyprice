@@ -6,6 +6,9 @@
 body{
     font-family: fantasy;
 }
+.cut{
+    text-decoration: line-through;
+}
 .card{
     background-color: transparent;
     margin-top: 25%;

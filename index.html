@@ -3,31 +3,27 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
     <script src= "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-
-
-
-
 
     <title>Game Search</title>
   </head>
   <body>
     <div class="banner-text column is-mobile">
       <ul>
-        <li></li>
-        <li></li>
+        <li><input class="input is-rounded is-primary is-mobile" id="store-text" type="text" placeholder="Game Search"></li>
+        <li><button class="button is-primary is-focused is-mobile" id="store-list">Deals</button></li>
         <li ></li>
         <li><input class="input is-rounded is-primary is-mobile" id="game-text" type="text" placeholder="Game Search"></li>
         <li><button class="button is-primary is-focused is-mobile" id="search">Search</button></li>
-        <li><button class="button is-primary is-focused is-mobile" id="list">Deals</button></li>
+        <li></li>
       </ul>
     </div>
     <div class="animation-area">
       <ul class="box-area">
-        <div class="card">
+        <div class="card is-mobile">
           <div class="card-content">
             <div class="media">
               <div class="media-left">
@@ -39,12 +35,15 @@
                 <p class="title is-4" id="display"></p>
                 <p class="subtitle is-4" id="price"></p>
                 <p class="subtitle is-4" id="retail"></p>
+                <p class="subtitle is-4" id="rating-count"></p>
+                <p class="subtitle is-4" id="rating-percent"></p>
+                <p class="subtitle is-4" id="rating-text"></p>
               </div>
             </div>
-            <div class="content"> <a>@bulmaio</a>.
-              <a href="#">#css</a> <a href="#">#responsive</a>
+            <div class="content"> <a href="#" ></a>.
+              <a href="#"></a> <a href="#"></a>
               <br>
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+              <time id="DT"></time>
             </div>
           </div>
         </div>

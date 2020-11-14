@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+    moment().format("ll")
+    let currentDate= moment().format("ll");
+    console.log(currentDate) 
+    $("#DT").text(currentDate);
     $('#search').click(function(){
     $("#game-text").val() == "";
     //get the text value
@@ -6,14 +11,20 @@ $(document).ready(function() {
     today(user);
     
 });
-$('#list').click(function(){
+$('#store-list').click(function(){
     $.ajax({
         method:"GET",
-        url: "https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=75"
+        url: "https://www.cheapshark.com/api/1.0/stores"
     }).then(function(data) {
         console.log(data);
     })
+    $("#store-text").val() == "";
 });
+
+storeCreator = (gameStores) => {
+
+}
+
 today = (user) => {
     $.ajax({
         method: "GET",
@@ -22,9 +33,18 @@ today = (user) => {
         console.log(data);
         $("#display").empty();
         $("#retail").empty();
-
+        $("#rating-text").empty();
+        $("#rating-count").empty();
+        let ratingPercent = data[1].steamRatingPercent;
+        let ratingText = data[1].steamRatingText;
+        let percentDiv = $('<p>').text( ratingPercent + " % " + ratingText + " - STEAM");
+        $("#rating-text").append(percentDiv);
+        let ratingCount = data[1].steamRatingCount;
+        let countDiv = $('<p>').text("Rated By : " + ratingCount + " Gamers");
+        $('#rating-count').append(countDiv);
         var normalPrice = data[1].normalPrice;
-        let oldP =$('<p>').text("Retail:" + normalPrice);
+        let oldP =$('<p>').text("Retail : " + normalPrice);
+        $(oldP).addClass("cut")
         $("#retail").append(oldP);
         let gameTitle = data[1].title;
         let pOne = $('<p>').text("Title : " + gameTitle);
@@ -38,8 +58,8 @@ today = (user) => {
         let pThree = $('<img>').attr('src', gameImage);
         $('#image').append(pThree);
         
-                var gameObject= {
-                    normalPrice: data[1].normalPrice,
+        var gameObject= {
+            normalPrice: data[1].normalPrice,
                     gameTitle: data[1].title,
                     gamePrice: data[1].salePrice,
                     gameImage: data[1].thumb
