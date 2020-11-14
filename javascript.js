@@ -21,9 +21,6 @@ $('#store-list').click(function(){
     $("#store-text").val() == "";
 });
 
-storeCreator = (gameStores) => {
-
-}
 
 today = (user) => {
     $.ajax({
@@ -58,13 +55,18 @@ today = (user) => {
         let pThree = $('<img>').attr('src', gameImage);
         $('#image').append(pThree);
         
+        metaData = () => {
+            let metaLink = data[1].metacriticLink;
+            $('#meta-link').attr("href", "https://www.metacritic.com/" + metaLink);
+        }
+        
         var gameObject= {
             normalPrice: data[1].normalPrice,
-                    gameTitle: data[1].title,
-                    gamePrice: data[1].salePrice,
-                    gameImage: data[1].thumb
-                }
-            
+            gameTitle: data[1].title,
+            gamePrice: data[1].salePrice,
+            gameImage: data[1].thumb
+        }
+        
             
                  localStorage.setItem("storageTi2", JSON.stringify(gameObject ));
                  let storageTi= localStorage.getItem("storageTi2");
