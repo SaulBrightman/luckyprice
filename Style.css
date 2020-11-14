@@ -10,6 +10,14 @@ body{
     text-decoration: line-through;
     color: red;
 }
+.luckyPrice{
+    text-decoration: underline;
+    font-size: 3rem;
+}
+.fa-dice{
+    color: red;
+    font-size: 3rem;
+}
 .card{
     background-color: transparent;
     margin-top: 25%;
@@ -30,7 +38,7 @@ body{
 }
 .banner-text ul li{
     display: inline-block;
-    padding: 40px 15px;
+    padding: 5px;
     text-transform: uppercase;
     color: black;
     font-size: 20px;
