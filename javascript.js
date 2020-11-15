@@ -72,13 +72,15 @@ $(document).ready(function() {
             let pThree = $('<img>').attr('src', gameImage);
             $('#image').append(pThree);
             // link for metacritic
-            let steamKey = data[1].steamAppID;
                 $('#news').click(function(){
                     $.ajax({
                         method:"GET",
-                        url:  `http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=${steamKey}&count=3&maxlength=150&format=json`
+                        url: "https://api.rawg.io/api/games?dates=2019-09-01,2019-09-30&platforms=18,1,7 # insert platforms ids"
                     }).then(function(response) {
                         console.log(response);
+                        let newGames = $('<h3>').text("New Release" + response[0].name);
+                        let newVG = $('<p>').text("Release Date :" + response[0].released);
+                        $("#newRelease").append(newGames, newVG);
                     })
                 });
             metaData = () => {
