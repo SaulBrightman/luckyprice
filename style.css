@@ -12,6 +12,9 @@ body{
 .far{
     padding-left: .2rem;
 }
+.section{
+    padding-top: 15px;
+}
 .cut{
     text-decoration: line-through;
     color: red;
